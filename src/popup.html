@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Fast Code </title>
+  <script src="./js/vue.js"></script> <!-- CSP version is required in Chrome App -->
+  <script src="./js/popup.js"></script>
+</head>
+<body>
+  <div id="app">
+    <select v-model="toolMode">
+      <option selected>Morse</option>
+      <option>BASE64</option>
+    </select>
+    <span> Selected: {{ toolMode }} </span>
+  </div>
+</body>
+</html>
