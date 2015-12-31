@@ -4,14 +4,38 @@
   <title> Fast Code </title>
   <script src="./js/vue.js"></script> <!-- CSP version is required in Chrome App -->
   <script src="./js/popup.js"></script>
+  <link rel="stylesheet" href="./css/popup.css" type="text/css">
 </head>
 <body>
   <div id="app">
-    <select v-model="toolMode">
-      <option selected>Morse</option>
+    <select v-model="toolMode" class="select">
+      <option selected>莫尔斯电码</option>
       <option>BASE64</option>
     </select>
-    <span> Selected: {{ toolMode }} </span>
+    <div id="container">
+      <div v-if=" toolMode == '莫尔斯电码' ">
+        <input type="text" placeholder="输入待处理数据" class="input" v-model="morse.text">
+        <div class="buttons">
+          <button v-on:click="morse.encode()" > 编码 </button>
+          <button v-on:click="morse.decode()" > 解码 </button>
+        </div>
+      </div>
+      <div v-if=" toolMode == 'BASE64' ">
+        <input type="text" placeholder="输入待处理数据" class="input" v-model="base64.text">
+        <div class="buttons">
+          <button v-on:click="base64.encode()" > 编码 </button>
+          <button v-on:click="base64.decode()" > 解码 </button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="version">
+      老司机编码助手 V0.1 Alpha
+    </div>
+    <div class="foot">
+      <a target="_blank" class="link" href="https://github.com/dsh0416/fast-code"> 项目地址 </a>
+      <a target="_blank" class="link" href="http://www.renren.com/577100256"> 东仙队长 </a>
+    </div>
   </div>
 </body>
 </html>

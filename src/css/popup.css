@@ -1,0 +1,40 @@
+body{
+  width: 200px;
+  padding: 5px;
+}
+
+.select{
+  width: 100%;
+}
+
+.input{
+  width: 97%;
+  margin-top: 7px;
+}
+
+.buttons{
+  margin-top: 7px;
+  text-align: center;
+}
+
+.version{
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.foot{
+  text-align: center;
+}
+
+.foot .link{
+  text-decoration: none;
+  color: #222;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.foot .link:hover{
+  text-decoration: none;
+  color: #666666;
+}

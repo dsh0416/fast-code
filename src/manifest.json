@@ -1,9 +1,12 @@
 {
   "manifest_version": 2,
 
-  "name": "老司机",
+  "name": "老司机编码助手",
   "description": "此扩展提供了快捷方式为您进行编码和解码。",
-  "version": "1.0",
+  "version": "0.1",
+  "icons":{
+    "512": "./img/icon.png"
+  },
 
   "permissions": [],
   "browser_action": {
