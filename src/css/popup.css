@@ -1,20 +1,43 @@
 body{
-  width: 200px;
+  width: 350px;
   padding: 5px;
+  background: linear-gradient(90deg, #9D50BB 10%, #6E48AA 90%);
+  font-family: sans-serif;
 }
 
-.select{
+.title{
+  text-align: center;
+  padding: 10px 0 10px 0;
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.fill{
   width: 100%;
 }
 
+.select{
+  margin-top: 10px;
+}
+
 .input{
-  width: 97%;
-  margin-top: 7px;
+  width: 333px;
+  margin-top: 12px;
+  font-size: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
 }
 
 .buttons{
-  margin-top: 7px;
+  margin-top: 12px;
   text-align: center;
+}
+
+.single-button{
+  margin-left: 7px;
+  margin-right: 7px;
 }
 
 .version{
@@ -25,6 +48,7 @@ body{
 
 .foot{
   text-align: center;
+  margin-top: 15px;
 }
 
 .foot .link{

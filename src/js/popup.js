@@ -4,6 +4,7 @@ window.onload = function() {
     el: '#app',
     data: {
       toolMode: '莫尔斯电码',
+      versionText: '版本 0.1.1',
       morse: {
         text: '',
         encodeMap: {
@@ -88,7 +89,6 @@ window.onload = function() {
           var arr = this.text.split(/[ \/]/);
           var res_arr = [];
           for (var x in arr) {
-            console.log(arr[x]);
             if (this.decodeMap[arr[x]] !== undefined) {
               res_arr.push(this.decodeMap[arr[x]]);
             }

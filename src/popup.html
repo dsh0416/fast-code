@@ -4,38 +4,63 @@
   <title> Fast Code </title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <script src="./js/vue.js"></script> <!-- CSP version is required in Chrome App -->
+  <script src="./js/jquery-2.1.4.js"></script>
+  <script src="./js/buttons.js"></script>
   <script src="./js/popup.js"></script>
+  <link rel="stylesheet" href="./css/buttons.css" type="text/css">
+  <link rel="stylesheet" href="./css/font-awesome.css" type="text/css">
   <link rel="stylesheet" href="./css/popup.css" type="text/css">
 </head>
 <body>
   <div id="app">
-    <select v-model="toolMode" class="select">
-      <option selected>莫尔斯电码</option>
-      <option>BASE64</option>
-    </select>
+    <div class="title">
+      老司机编码助手
+    </div>
+
+    <!-- DROPDOWN MENU -->
+    <span class="button-dropdown button-dropdown-primary fill select" data-buttons="dropdown">
+      <a href="#" class="button button-primary fill"> {{toolMode}} <i class="fa fa-caret-down"></i></a>
+
+      <ul class="button-dropdown-list is-below">
+        <li><a href="#" v-on:click="toolMode = '莫尔斯电码'">莫尔斯电码</a></li>
+        <li><a href="#" v-on:click="toolMode = 'BASE64'">BASE64</a></li>
+      </ul>
+    </span>
+
     <div id="container">
       <div v-if=" toolMode == '莫尔斯电码' ">
         <input type="text" placeholder="输入待处理数据" class="input" v-model="morse.text">
         <div class="buttons">
-          <button v-on:click="morse.encode()" > 编码 </button>
-          <button v-on:click="morse.decode()" > 解码 </button>
+          <button class="button button-glow button-rounded button-caution single-button" v-on:click="morse.encode()" > 编码 </button>
+          <button class="button button-glow button-rounded button-highlight single-button" v-on:click="morse.decode()" > 解码 </button>
         </div>
       </div>
       <div v-if=" toolMode == 'BASE64' ">
         <input type="text" placeholder="输入待处理数据" class="input" v-model="base64.text">
         <div class="buttons">
-          <button v-on:click="base64.encode()" > 编码 </button>
-          <button v-on:click="base64.decode()" > 解码 </button>
+          <button class="button button-glow button-rounded button-caution single-button" v-on:click="base64.encode()" > 编码 </button>
+          <button class="button button-glow button-rounded button-highlight single-button" v-on:click="base64.decode()" > 解码 </button>
         </div>
       </div>
     </div>
-    <hr>
-    <div class="version">
-      老司机编码助手 V0.1.1 Alpha
-    </div>
+
     <div class="foot">
-      <a target="_blank" class="link" href="https://github.com/dsh0416/fast-code"> 项目地址 </a>
-      <a target="_blank" class="link" href="http://www.renren.com/577100256"> 东仙队长 </a>
+      <div class="button-group">
+        <a target="_blank" href="https://github.com/dsh0416/fast-code/releases/latest" class="button button-small button-royal button-raised" v-on:mouseover="versionText='检查更新?'" v-on:mouseout="versionText='版本 0.1.1'">
+          {{ versionText }}
+        </a>
+        <a target="_blank" href="https://github.com/dsh0416/fast-code" class="button button-small button-royal button-raised">项目地址</a>
+        <span class="button-dropdown button-dropdown-royal" data-buttons="dropdown">
+          <button class="button button-small button-royal button-raised">
+            联系作者 <i class="fa fa-caret-up"></i>
+          </button>
+
+          <ul class="button-dropdown-list is-above">
+            <li><a target="_blank" href="http://www.renren.com/577100256">人人网</a></li>
+            <li><a target="_blank" href="http://weibo.com/dsh0416/">新浪微博</a></li>
+          </ul>
+        </span>
+      </div>
     </div>
   </div>
 </body>
