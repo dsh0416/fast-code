@@ -24,6 +24,7 @@
       <ul class="button-dropdown-list is-below">
         <li><a href="#" v-on:click="toolMode = '莫尔斯电码'">莫尔斯电码</a></li>
         <li><a href="#" v-on:click="toolMode = 'BASE64'">BASE64</a></li>
+        <li><a href="#" v-on:click="toolMode = '伏羲六十四卦'">伏羲六十四卦</a></li>
       </ul>
     </span>
 
@@ -42,11 +43,18 @@
           <button class="button button-glow button-rounded button-highlight single-button" v-on:click="base64.decode()" > 解码 </button>
         </div>
       </div>
+      <div v-if=" toolMode == '伏羲六十四卦' ">
+        <input type="text" placeholder="输入待处理数据" class="input" v-model="iChing.text">
+        <div class="buttons">
+          <button class="button button-glow button-rounded button-caution single-button" v-on:click="iChing.encode()" > 编码 </button>
+          <button class="button button-glow button-rounded button-highlight single-button" v-on:click="iChing.decode()" > 解码 </button>
+        </div>
+      </div>
     </div>
 
     <div class="foot">
       <div class="button-group">
-        <a target="_blank" href="https://github.com/dsh0416/fast-code/releases/latest" class="button button-small button-royal button-raised" v-on:mouseover="versionText='检查更新?'" v-on:mouseout="versionText='版本 0.1.1'">
+        <a target="_blank" href="https://github.com/dsh0416/fast-code/releases/latest" class="button button-small button-royal button-raised" v-on:mouseover="versionText='检查更新?'" v-on:mouseout="versionText='版本 0.1.2'">
           {{ versionText }}
         </a>
         <a target="_blank" href="https://github.com/dsh0416/fast-code" class="button button-small button-royal button-raised">项目地址</a>
