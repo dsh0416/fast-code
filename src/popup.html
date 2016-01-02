@@ -30,21 +30,21 @@
 
     <div id="container">
       <div v-if=" toolMode == '莫尔斯电码' ">
-        <input type="text" placeholder="输入待处理数据" class="input" v-model="morse.text">
+        <textarea type="text" placeholder="输入待处理数据" class="input" v-model="morse.text"></textarea>
         <div class="buttons">
           <button class="button button-glow button-rounded button-caution single-button" v-on:click="morse.encode()" > 编码 </button>
           <button class="button button-glow button-rounded button-highlight single-button" v-on:click="morse.decode()" > 解码 </button>
         </div>
       </div>
       <div v-if=" toolMode == 'BASE64' ">
-        <input type="text" placeholder="输入待处理数据" class="input" v-model="base64.text">
+        <textarea type="text" placeholder="输入待处理数据" class="input" v-model="base64.text"></textarea>
         <div class="buttons">
           <button class="button button-glow button-rounded button-caution single-button" v-on:click="base64.encode()" > 编码 </button>
           <button class="button button-glow button-rounded button-highlight single-button" v-on:click="base64.decode()" > 解码 </button>
         </div>
       </div>
       <div v-if=" toolMode == '伏羲六十四卦' ">
-        <input type="text" placeholder="输入待处理数据" class="input" v-model="iChing.text">
+        <textarea type="text" placeholder="输入待处理数据" class="input" v-model="iChing.text"></textarea>
         <div class="buttons">
           <button class="button button-glow button-rounded button-caution single-button" v-on:click="iChing.encode()" > 编码 </button>
           <button class="button button-glow button-rounded button-highlight single-button" v-on:click="iChing.decode()" > 解码 </button>
