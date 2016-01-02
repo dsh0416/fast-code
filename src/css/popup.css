@@ -22,20 +22,32 @@ body{
 }
 
 .input{
-  width: 333px;
+  width: 325px;
   height: 150px;
-  max-width: 333px;
+  max-width: 325px;
   max-height: 250px;
   margin-top: 12px;
   font-size: 16px;
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 12px;
+  padding-right: 12px;
 }
 
 .buttons{
   margin-top: 12px;
   text-align: center;
+}
+
+.magnet{
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.magnet a{
+  color: white;
 }
 
 .single-button{
