@@ -4,7 +4,7 @@ window.onload = function() {
     el: '#app',
     data: {
       toolMode: '莫尔斯电码',
-      versionText: '版本 0.1.2',
+      versionText: '版本 0.1.3',
       morse: {
         text: '',
         encodeMap: {
