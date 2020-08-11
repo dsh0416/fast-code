@@ -99,10 +99,10 @@ window.onload = function() {
       base64: {
         text: '',
         encode: function() {
-          this.text = btoa(this.text);
+          this.text = btoa(unescape(encodeURIComponent(this.text)));
         },
         decode: function() {
-          this.text = atob(this.text);
+          this.text = decodeURIComponent(escape(atob(this.text)));
         }
       },
       iChing: {
